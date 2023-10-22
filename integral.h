@@ -9,7 +9,7 @@ double integral(const Func& f, size_t n, double low, double high) {
     double seq_sum = 0;
     for(size_t i = 0; i < n; i++) {
       double x = low + dx * i;
-      seq_sum += f(x) * dx;
+      seq_sum += f(x + dx / 2) * dx;
     }
     return seq_sum;
   } else {
