@@ -8,8 +8,8 @@ double integral(const Func& f, size_t n, double low, double high) {
   if (n < 800) {
     double seq_sum = 0;
     for(size_t i = 0; i < n; i++) {
-      double x = low + dx * i;
-      seq_sum += f(x + dx / 2) * dx;
+      double x = low + dx * (i + 0.5);
+      seq_sum += f(x) * dx;
     }
     return seq_sum;
   } else {
