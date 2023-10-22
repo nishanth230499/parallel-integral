@@ -1,5 +1,4 @@
 #include "parallel.h"
-#include <atomic>
 
 using namespace parlay;
 
@@ -10,8 +9,7 @@ double integral(const Func& f, size_t n, double low, double high) {
     double seq_sum = 0;
     for(size_t i = 0; i < n; i++) {
       double x = low + dx * i;
-      double fxdx = f(x) * dx;
-      seq_sum += fxdx;
+      seq_sum += f(x) * dx;
     }
     return seq_sum;
   } else {
