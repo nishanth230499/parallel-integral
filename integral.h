@@ -6,7 +6,7 @@ using namespace parlay;
 template <class Func>
 double integral(const Func& f, size_t n, double low, double high) {
   double dx = (high - low) / n;
-  if (n < 900) {
+  if (n < 800) {
     double seq_sum = 0;
     for(size_t i = 0; i < n; i++) {
       double x = low + dx * i;
